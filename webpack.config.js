@@ -3,7 +3,6 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        index: path.resolve(__dirname, 'src/client/index.jsx'),
         demo: path.resolve(__dirname, 'src/client/demo.jsx'),
 
     },

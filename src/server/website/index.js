@@ -4,15 +4,6 @@ import fs from 'fs';
 const router = express.Router();
 
 
-router.get('/', (req, res) => {
-    res.render('react', {
-        js_host: global.jsHost,
-        name: 'index',
-        title: 'Homepage',
-    });
-});
-
-
 router.get('/demo/:config', (req, res) => {
     res.render('react', {
         js_host: global.jsHost,
