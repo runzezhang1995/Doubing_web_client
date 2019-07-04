@@ -1,0 +1,9 @@
+extends layout
+block extra-scripts
+    if data
+        script.
+            window.initialData = !{data};
+    //- script(src=`${global.jsHost}/common.bundle.js`)
+    script(src=`${global.jsHost}/${name}.bundle.js`)
+block content
+    #app-root
