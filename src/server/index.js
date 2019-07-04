@@ -51,7 +51,7 @@ app.use((req, res) => {
 const port = 1551;
 
 global.jsHost = '';//'http://localhost:9002';
-global.jsHost = 'http://localhost:9002';
+// global.jsHost = 'http://localhost:9002';
 
 global.requestIdToResolve = new Map();
 
