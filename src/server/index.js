@@ -1,11 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import api from './api/index';
 import website from './website/index';
 import https from 'https';
 
 const app = express();
-
+// initial server with pug render enginer
 app.set('view engine', 'pug');
 app.set('views', 'src/templates');
 
@@ -23,7 +22,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 // app.use(cookieParser(process.env.COOKIE_SECRET));
 
-app.use('/api', api);
+// router middleware 
 app.use('/', website);
 
 
@@ -55,7 +54,7 @@ global.jsHost = '';//'http://localhost:9002';
 
 global.requestIdToResolve = new Map();
 
-https
+// start server, at port 1551
 const server = app.listen(port, () => {
     console.log(`Server listening on port ${port}!`);
     console.log("Run 'yarn run wds' in another terminal.");

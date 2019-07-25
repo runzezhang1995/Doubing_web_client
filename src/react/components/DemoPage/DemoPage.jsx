@@ -43,6 +43,8 @@ class App extends React.Component{
     );
 }
 
+
+// navigation bar, hold icon and school name 
 const NavigationBar = () => (
     <Navbar bg="light" variant="light">
         <Navbar.Brand href="">

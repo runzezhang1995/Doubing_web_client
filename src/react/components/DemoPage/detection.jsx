@@ -35,6 +35,7 @@ class Detection extends React.Component {
         clearInterval(updater);
     }
 
+    // when the start or stop button is pressed 
     switchUpdating(){
         console.log('switched');
         if(this.state.updating == false){
@@ -43,7 +44,7 @@ class Detection extends React.Component {
                 recorder: [0, 0, 0, 0, 0, 0, 0]
             });
             
-    
+            // setup a timer to periodlly push request to python server, interval is set to be 200ms 
             updater = setInterval(()=> {
 
                 this.serverRequest = $.ajax({
@@ -63,7 +64,7 @@ class Detection extends React.Component {
                     if(result >= 0 && result < 7){
                         updatedRecorder[result] ++;  
                     }  
-
+                    // update display image 
                     this.setState({
                         videoHash: Date.now(),
                         recorder: updatedRecorder
@@ -85,13 +86,13 @@ class Detection extends React.Component {
         }
     }
 
-
+    // main template 
     render = () => (
         <div className="main-block">
         <Row>
             <div className="yolo-intro">
                 <h1 className="subtitle" style={{"textAlign":'center'}}> Real-time Facial Emotion Demo </h1>
-                <p className="content"> {text.emotion_intro}  </p>
+                {/* <p className="content"> {text.emotion_intro}  </p> */}
             </div>
         </Row>
         <Row>
@@ -137,13 +138,6 @@ class Detection extends React.Component {
         
         </div>
     );
-
-
-
-
-
-
-
 }
 
 

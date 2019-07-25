@@ -5,6 +5,8 @@ import $ from './common';
 import App from '../react/components/DemoPage/DemoPage';
 
 
+// use react as page template 
+
 $(() => {
     render(
         <App/>,
